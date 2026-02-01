@@ -1,0 +1,42 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Owen Networks",
+  description = "Owen Networks is a personal infrastructure lab focused on networking, identity, and secure systems engineering."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (LinkedIn, Slack, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Owen Networks" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Optional: theme color -->
+    <meta name="theme-color" content="#0f172a" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
