@@ -1,13 +1,48 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+// Import your components
+import Hero from '../components/Hero.astro';
+import AppGrid from '../components/AppGrid.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'; // Optional: if you have a wrapper
 ---
 
-<BaseLayout
-  title="Owen Networks"
-  description="Personal infrastructure lab focused on networking, identity, and secure systems engineering."
->
-  <main>
-    <h1>Owen Networks</h1>
-    <p>Welcome to my personal infrastructure lab.</p>
-  </main>
-</BaseLayout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Owen Networks | Photography & Lab</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+	</head>
+	
+	<body class="bg-[#1A2421] font-sans selection:bg-[#C2996B] selection:text-white">
+		
+		<main>
+			<Hero />
+
+			<AppGrid />
+		</main>
+
+		<footer class="py-12 text-center text-[#E8EEF2]/40 text-sm border-t border-white/5">
+			<p>&copy; {new Date().getFullYear()} Owen Networks. All rights reserved.</p>
+			<p class="font-mono mt-2 uppercase tracking-widest text-[10px]">System Stable // Signal Strong</p>
+		</footer>
+
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--accent: #C2996B;
+	}
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
+</style>
