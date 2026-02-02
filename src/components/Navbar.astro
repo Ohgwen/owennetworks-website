@@ -8,7 +8,7 @@ const navLinks = [
 ];
 ---
 
-<nav class="fixed top-0 left-0 w-full z-50 px-6 py-4">
+<nav class="fixed top-0 left-0 w-full z-50  py-4">
   <div class="max-w-7xl mx-auto">
     <div class="backdrop-blur-md bg-black/20 border border-white/10 rounded-full px-6 py-3 flex justify-between items-center shadow-lg">
       
@@ -22,6 +22,9 @@ const navLinks = [
             {link.name}
           </a>
         ))}
+        <a href="https://auth.owennetworks.live" class="text-[#C2996B] hover:text-white transition-colors">
+          <b>Login</b>
+        </a>
         <div class="flex items-center gap-2 pl-4 border-l border-white/10">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -30,7 +33,6 @@ const navLinks = [
           <span class="text-[10px] uppercase tracking-widest text-green-500 font-mono">Lab Online</span>
         </div>
       </div>
-      
     </div>
   </div>
 </nav>
