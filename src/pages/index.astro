@@ -3,6 +3,7 @@
 import Hero from '../components/Hero.astro';
 import AppGrid from '../components/AppGrid.astro';
 import BaseLayout from '../layouts/BaseLayout.astro'; // Optional: if you have a wrapper
+import Navbar from '../components/Navbar.astro';
 ---
 
 <html lang="en">
@@ -18,13 +19,17 @@ import BaseLayout from '../layouts/BaseLayout.astro'; // Optional: if you have a
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 	</head>
 	
-	<body class="bg-[#1A2421] font-sans selection:bg-[#C2996B] selection:text-white">
+
+	<body class="bg-[#1A2421]">
+		<Navbar />
 		
 		<main>
 			<Hero />
-
 			<AppGrid />
 		</main>
+	</body>
+
+	<body class="bg-[#1A2421] font-sans selection:bg-[#C2996B] selection:text-white">
 
 		<footer class="py-12 text-center text-[#E8EEF2]/40 text-sm border-t border-white/5">
 			<p>&copy; {new Date().getFullYear()} Owen Networks. All rights reserved.</p>
