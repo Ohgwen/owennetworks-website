@@ -33,6 +33,55 @@ const navLinks = [
           <span class="text-[10px] uppercase tracking-widest text-green-500 font-mono">Lab Online</span>
         </div>
       </div>
+    <button id="menu-toggle" class="md:hidden text-white p-2 z-[60]" aria-label="Toggle Menu">
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-[#1A2421]/FA backdrop-blur-xl translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 z-[55]">
+        {navLinks.map(link => (
+            <a href={link.href} class="mobile-nav-link text-3xl font-bold text-white hover:text-[#C2996B]">
+              {link.name}
+            </a>
+          ))}
+          
+        <a href="https://auth.owennetworks.live" class="text-2xl font-bold text-[#C2996B] hover:text-white">
+          <b>Login</b>
+        </a>
+        <button id="menu-toggle-inside" class="md:hidden text-white p-2 z-[65]" aria-label="Toggle Menu">
+        <svg id="cross" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
   </div>
 </nav>
+
+<script>
+  // -- NAVIGATION LOGIC --
+  const setupNav = () => {
+    const btn = document.getElementById('menu-toggle');
+    const btnInside = document.getElementById('menu-toggle-inside');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-nav-link');
+    const icon = document.getElementById('menu-icon');
+
+    const toggleMenu = () => {
+      menu?.classList.toggle('translate-x-full');
+      // Simple icon swap or rotation
+      icon?.classList.toggle('rotate-90');
+    };
+
+    btn?.addEventListener('click', toggleMenu);
+    btnInside?.addEventListener('click', toggleMenu);
+
+    links.forEach(link => link.addEventListener('click', toggleMenu));
+  };
+
+// Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    setupNav();
+  });
+</script>
