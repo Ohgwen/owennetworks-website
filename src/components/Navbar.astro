@@ -2,42 +2,52 @@
 // You can add navigation links here as an array for easy editing later
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Home Lab', href: '#apps' },
-  { name: 'About', href: '#about' },
+//  { name: 'Gallery', href: '#gallery' },
+//  { name: 'Home Lab', href: '#apps' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
 ];
 ---
 
 <nav class="fixed top-0 left-0 w-full z-50 py-4">
   <div class="max-w-7xl mx-auto px-6 justify-between items-center">
-    <div class="backdrop-blur-md bg-black/20 border border-white/10 rounded-full px-6 py-3 flex justify-between items-center shadow-lg">
-      
-      <a href="/" class="text-white font-bold tracking-tighter text-xl flex items-center gap-2">
-        <span class="text-[#C2996B]">OWEN</span>NETWORKS
-      </a>
+<div class="backdrop-blur-md bg-black/20 border border-white/10 rounded-full px-6 py-3 flex justify-between items-center shadow-lg">
+  
+  <!-- Logo -->
+  <a href="/" class="text-white font-bold tracking-tighter text-xl flex items-center gap-2">
+    <span class="text-[#C2996B]">OWEN</span>NETWORKS
+  </a>
 
-      <div class="hidden md:flex gap-8 items-center">
-        {navLinks.map(link => (
-          <a href={link.href} class="text-[#E8EEF2]/80 hover:text-white text-sm font-medium transition-colors">
-            {link.name}
-          </a>
-        ))}
-        <a href="https://auth.owennetworks.live" class="text-[#C2996B] hover:text-white transition-colors">
-          <b>Login</b>
-        </a>
-        <div class="flex items-center gap-2 pl-4 border-l border-white/10">
+  <!-- Desktop Nav -->
+  <div class="hidden md:flex gap-8 items-center">
+    {navLinks.map(link => (
+      <a href={link.href} class="text-[#E8EEF2]/80 hover:text-white text-sm font-medium transition-colors">
+        {link.name}
+      </a>
+    ))}
+    <a href="https://auth.owennetworks.live" class="text-[#C2996B] hover:text-white transition-colors">
+      <b>Login</b>
+      </a>
+        <!-- <div class="flex items-center gap-2 pl-4 border-l border-white/10">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
           <span class="text-[10px] uppercase tracking-widest text-green-500 font-mono">Lab Online</span>
         </div>
-      </div>
-    <button id="menu-toggle" class="md:hidden text-white p-2 z-[60]" aria-label="Toggle Menu">
-        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
+      </div> -->
+
+  </div>
+
+  <!-- Mobile Button -->
+  <button id="menu-toggle" class="md:hidden text-white p-2 z-[60]" aria-label="Toggle Menu">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  </button>
+
+</div>
+
     </div>
 
     <div id="mobile-menu" class="fixed inset-0 bg-[#1A2421]/FA backdrop-blur-xl translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 z-[55]">

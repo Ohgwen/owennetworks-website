@@ -1,0 +1,144 @@
+---
+import { Image } from 'astro:assets';
+import contactImage from '../assets/hero-bg.jpg'; // swap if desired
+import "../styles/global.css";
+import Navbar from '../components/Navbar.astro';
+---
+<Navbar />
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Contact Us</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+	</head>
+	
+
+	<body class="bg-[#1A2421] font-sans selection:bg-[#C2996B] selection:text-white">
+		<Navbar />
+		
+		<main>
+<section class="relative min-h-screen w-full overflow-hidden flex items-center justify-center py-20">
+  <!-- Background -->
+  <div class="absolute inset-0 -z-10">
+    <Image 
+      src={contactImage} 
+      alt="Contact Background" 
+      class="h-full w-full object-cover"
+      quality="high"
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
+
+  <!-- Frame -->
+  <div class="absolute inset-10 border-white/20 border-px pointer-events-none hidden md:block">
+    <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-white"></div>
+    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-white"></div>
+    <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-white"></div>
+    <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-white"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="z-10 max-w-3xl w-full px-6">
+    <div class="backdrop-blur-md bg-white/10 p-10 rounded-2xl border border-white/20 shadow-2xl">
+
+      <!-- Title -->
+      <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-4">
+        CONTACT <span class="text-[#C2996B]">US</span>
+      </h1>
+
+      <p class="text-[#E8EEF2]/80 mb-8">
+        For business inquiries, IT services, or project collaborations - fill out the form below 
+        and we'll get back to you as soon as possible.
+      </p>
+
+      <h3 class="text-2xl font-semibold text-white mb-4">Get in Touch</h3>
+      <!-- Form -->
+       
+      <form id="contact-form" class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="6ba76e8c-8f54-4be5-bc4b-50672ca04109">
+        <!-- Name -->
+        <div>
+          <label class="text-sm text-[#E8EEF2]/70">Name</label>
+          <input 
+            type="text" 
+            class="w-full mt-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-[#E8EEF2]/40 focus:outline-none focus:border-[#C2996B]"
+            placeholder="Your name"
+            required
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="text-sm text-[#E8EEF2]/70">Email</label>
+          <input 
+            type="email" 
+            class="w-full mt-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-[#E8EEF2]/40 focus:outline-none focus:border-[#C2996B]"
+            placeholder="you@example.com"
+            required
+            name="email"
+          />
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label class="text-sm text-[#E8EEF2]/70">Message</label>
+          <textarea 
+            rows="5"
+            class="w-full mt-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-[#E8EEF2]/40 focus:outline-none focus:border-[#C2996B]"
+            placeholder="Tell me about your project, setup, or question..."
+            required
+            name="message"
+          ></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button 
+          type="submit"
+          class="w-full py-3 bg-[#5E6B73] text-white rounded-full hover:bg-[#C2996B] transition-all"
+        >
+          Send Message
+        </button>
+
+      </form>
+
+      <!-- Alt contact -->
+      <div class="mt-8 text-center text-sm text-white/80">
+        <h3 class="text-2xl font-semibold py-2">Or contact directly:</h3>
+        <p class="text-[#C2996B]"><a href="mailto:contact@owennetworks.com">contact@owennetworks.com</a></p>
+        <p class="text-[#C2996B]"><a href="tel:551-600-3010">551-600-3010</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer detail -->
+  <div class="absolute bottom-12 left-12 text-[#E8EEF2]/60 text-xs font-mono hidden lg:block">
+    <p>LOC: 41.083458 N, -74.201918 W</p>
+    <p>ISO 100 | 35mm | f/2.8</p>
+  </div>
+</section>
+		</main>
+
+
+	</body>
+	
+</html>
+
+<style is:global>
+	:root {
+		--accent: #C2996B;
+	}
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
+</style>

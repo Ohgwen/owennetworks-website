@@ -1,0 +1,155 @@
+---
+import { Image } from 'astro:assets';
+import "../styles/global.css";
+import aboutImage from '../assets/hero-bg.jpg';
+import me from '../assets/portrait.png'; // add your photo
+import Navbar from '../components/Navbar.astro';
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>About</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+	</head>
+	
+
+	<body class="bg-[#1A2421] font-sans selection:bg-[#C2996B] selection:text-white">
+		<Navbar />
+		
+		<main>
+<section class="relative min-h-screen w-full overflow-hidden flex items-center justify-center py-20">
+  <!-- Background -->
+  <div class="absolute inset-0 -z-10">
+    <Image 
+      src={aboutImage} 
+      alt="About Background" 
+      class="h-full w-full object-cover"
+      quality="high"
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
+
+  <!-- Frame corners -->
+  <div class="absolute inset-10 border-white/20 border-px pointer-events-none hidden md:block">
+    <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-white"></div>
+    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-white"></div>
+    <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-white"></div>
+    <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-white"></div>
+  </div>
+
+  
+  <!-- Content -->
+  <div class="z-10 max-w-4xl px-6">
+    <div class="backdrop-blur-md bg-white/10 p-10 rounded-2xl border border-white/20 shadow-2xl">
+      
+
+  <div class="max-w-4xl mx-auto text-[#E8EEF2]">
+
+    <!-- LEFT: Photo -->
+    <div class="relative group">
+      
+      <!-- Glow effect -->
+      <div class="absolute -inset-2 bg-[#C2996B]/20 blur-2xl opacity-0 group-hover:opacity-100 transition"></div>
+
+      <Image 
+        src={me} 
+        alt="Owen"
+        class="float-left md:float-left w-40 md:w-64 mr-6 mb-4 rounded-2xl border border-white/20 shadow-2xl object-cover"
+      />
+
+      <!-- Optional label -->
+      <p class="text-xs font-mono text-[#C2996B] mt-3">
+        OWEN FALL // SYSTEMS & INFRASTRUCTURE
+      </p>
+    </div>
+
+    <!-- RIGHT: Text -->
+    <div>
+
+      <!-- Title -->
+      <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
+        ABOUT <span class="text-[#C2996B]">ME</span>
+      </h1>
+
+      <!-- Intro -->
+      <p class="text-[#E8EEF2] text-lg leading-relaxed mb-6">
+        I'm Owen, the creator behind <span class="text-[#C2996B] font-semibold">Owen Networks</span>. 
+        I specialize in network infrastructure, system administration, and building reliable IT solutions 
+        for both personal and professional environments.
+      </p>
+
+      <!-- Details -->
+      <p class="text-[#E8EEF2]/90 text-base leading-relaxed mb-6">
+        My work focuses on designing and maintaining secure, scalable systems — from enterprise-grade 
+        networking setups to self-hosted platforms and automation tools. I also manage deployments involving 
+        virtualization, VPN infrastructure, VoIP systems, and Kubernetes-based environments.
+      </p>
+
+      <!-- Lists -->
+      <div class="grid grid-cols-2 gap-6 mt-6">
+        <div>
+          <h2 class="text-white text-lg font-semibold mb-2">What I Do</h2>
+          <ul class="text-[#E8EEF2]/80 text-sm space-y-1">
+            <li>Network Design</li>
+            <li>Server Infrastructure</li>
+            <li>Security</li>
+            <li>Automation</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-white text-lg font-semibold mb-2">Other</h2>
+          <ul class="text-[#E8EEF2]/80 text-sm space-y-1">
+            <li>Photography</li>
+            <li>Media Systems</li>
+            <li>Dashboards</li>
+            <li>Projects</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex gap-4 mt-8">
+        <a href="/contact" class="px-6 py-3 bg-[#5E6B73] text-white rounded-full hover:bg-[#C2996B] transition-all">
+          Contact
+        </a>
+        <a href="/" class="px-6 py-3 border border-white text-white rounded-full hover:bg-white/10 transition-all">
+          Home
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+  <!-- Footer detail -->
+
+</section>
+		</main>
+          <div class="absolute bottom-12 left-12 text-[#E8EEF2]/60 text-xs font-mono hidden lg:block">
+    <p>LOC: 41.083458 N, -74.201918 W</p>
+    <p>ISO 100 | 35mm | f/2.8</p>
+  </div>
+	</body>
+	
+</html>
+
+<style is:global>
+	:root {
+		--accent: #C2996B;
+	}
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
+</style>

@@ -9,7 +9,6 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://owennetworks.live',
-
   integrations: [
     sitemap()
   ],
@@ -17,4 +16,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   }
+
 });
