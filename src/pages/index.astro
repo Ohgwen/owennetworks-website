@@ -1,192 +1,260 @@
 ---
 // Import your components
-import Hero from '../components/Hero.astro';
-import BaseLayout from '../layouts/BaseLayout.astro'; // Optional: if you have a wrapper
-import Navbar from '../components/Navbar.astro';
-import PhotographyGallery from '../components/PhotographyGallery.astro';
-
-
-const apps = [
-  { name: 'Authentication Provider', url: 'https://auth.owennetworks.live' },
-  { name: 'Unifi', url: 'https://owen-networks-2f3f.ui.com' },
-  { name: 'Remote Access', url: 'https://kasm.owennetworks.live' },
-];
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro"; // Optional: if you have a wrapper
+import Navbar from "../components/Navbar.astro";
+import PhotographyGallery from "../components/PhotographyGallery.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Owen Networks</title>
-		
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
-	</head>
-	
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Owen Networks</title>
 
-	<body class="bg-[#1A2421] font-sans selection:bg-[#C2996B] selection:text-white">
-		<Navbar />
-		
-		<main>
-			<Hero />
-			<section class="relative py-24 px-6 bg-black text-white">
-			  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-			
-			    <!-- Professional -->
-			    <div class="backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-[#C2996B] transition">
-			      <h2 class="text-2xl font-semibold mb-4 text-[#C2996B]">
-			        Professional IT & MSP
-			      </h2>
-			      <p class="text-sm text-[#E8EEF2]/80 mb-6">
-			        Network infrastructure, system administration, and managed IT services 
-			        for businesses. Focused on reliability, security, and scalability.
-			      </p>
-			      <ul class="text-sm space-y-1 mb-6 text-[#E8EEF2]/70">
-			        <li>• Network Design & Deployment</li>
-			        <li>• VLAN & Security Architecture</li>
-			        <li>• Server & Cloud Infrastructure</li>
-			        <li>• Monitoring & Automation</li>
-			      </ul>
-			      <a href="#services" class="text-sm underline hover:text-[#C2996B]">
-			        View Services →
-			      </a>
-			    </div>
-			
-			    <!-- Personal -->
-			    <div class="backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-[#C2996B] transition">
-			      <h2 class="text-2xl font-semibold mb-4 text-[#C2996B]">
-			        Personal Projects & Photography
-			      </h2>
-			      <p class="text-sm text-[#E8EEF2]/80 mb-6">
-			        A look into my homelab, experiments, and photography work. 
-			        Where I build, test, and create outside of client environments.
-			      </p>
-			      <ul class="text-sm space-y-1 mb-6 text-[#E8EEF2]/70">
-			        <li>• Kubernetes & Self-Hosting</li>
-			        <li>• Networking Lab Environments</li>
-			        <li>• Automation & Scripting</li>
-			        <li>• Landscape & Urban Photography</li>
-			      </ul>
-			      <a href="/projects" class="text-sm underline hover:text-[#C2996B]">
-			        View Projects →
-			      </a>
-    			</div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  			  </div>
-			</section>
-			<section id="apps" class="py-24 text-white px-6">
-			  <div class="max-w-6xl mx-auto">
-			    <h2 class="text-3xl font-bold mb-10">
-			      Network <span class="text-[#C2996B]">Directory</span>
-			    </h2>
-			
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-  {apps.map((app, i) => (
-    <a href={app.url} class="group relative p-6 bg-white/5 border border-white/10 rounded-xl hover:border-[#C2996B] transition-all overflow-hidden">
-      
-      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-[#C2996B]/10 blur-xl transition"></div>
+  <body
+    class="bg-[#1A2421] font-sans selection:bg-[#C2996B] selection:text-white"
+  >
+    <Navbar />
 
-      <div class="relative z-10">
-        <p class="text-xs font-mono text-[#C2996B] mb-2">
-          {String(i + 1).padStart(2, '0')}
+    <main>
+      <Hero />
+      <section class="py-20 px-6 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">
+            Reliable IT for <span class="text-[#C2996B]">Small Business</span>
+          </h2>
+          <p class="text-[#E8EEF2]/70 leading-relaxed">
+            Owen Networks provides professional IT and network solutions for
+            small businesses, including restaurants, retail, and offices. From
+            fixing unreliable WiFi to deploying complete infrastructure, our
+            focus is simple: keep your systems online and your business running.
+          </p>
+        </div>
+      </section>
+      <section class="relative py-24 px-6 bg-black text-white">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="mb-16 text-center">
+            <p class="text-xs tracking-widest text-[#C2996B] mb-2">
+              WHY CHOOSE US
+            </p>
+            <h2 class="text-4xl font-bold">
+              Trusted IT <span class="text-[#C2996B]">Solutions</span>
+            </h2>
+            <p class="text-[#E8EEF2]/60 mt-4 max-w-xl mx-auto">
+              Proven expertise in diagnosing and resolving complex IT issues
+              across a variety of environments.
+            </p>
+          </div>
+
+          <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <!-- Managed IT Services -->
+            <div
+              class="backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-[#C2996B] transition"
+            >
+              <h2 class="text-2xl font-semibold mb-4 text-[#C2996B]">
+                Managed IT Services
+              </h2>
+              <p class="text-sm text-[#E8EEF2]/80 mb-6">
+                Ongoing support, monitoring, and maintenance to keep your
+                business systems running reliably and securely.
+              </p>
+              <ul class="text-sm space-y-1 mb-6 text-[#E8EEF2]/70">
+                <li>• 24/7 Monitoring & Alerting</li>
+                <li>• Remote & On-Site Support</li>
+                <li>• System Maintenance & Updates</li>
+                <li>• Backup & Recovery Solutions</li>
+              </ul>
+              <a
+                href="#services"
+                class="text-sm underline hover:text-[#C2996B]"
+              >
+                Learn More →
+              </a>
+            </div>
+
+            <!-- Network & Infrastructure -->
+            <div
+              class="backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-[#C2996B] transition"
+            >
+              <h2 class="text-2xl font-semibold mb-4 text-[#C2996B]">
+                Network & Infrastructure
+              </h2>
+              <p class="text-sm text-[#E8EEF2]/80 mb-6">
+                Design and deployment of secure, high-performance networks built
+                for modern business environments.
+              </p>
+              <ul class="text-sm space-y-1 mb-6 text-[#E8EEF2]/70">
+                <li>• Network Design & Deployment</li>
+                <li>• VLAN & Security Architecture</li>
+                <li>• WiFi Optimization</li>
+                <li>• POS & Business System Networking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-24 text-white px-6 relative">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="mb-16">
+            <p class="text-xs tracking-widest text-[#C2996B] mb-2">SERVICES</p>
+            <h2 class="text-4xl font-bold">
+              IT & MSP <span class="text-[#C2996B]">Capabilities</span>
+            </h2>
+            <p class="text-[#E8EEF2]/60 mt-4 max-w-xl">
+              Designed for reliability, security, and scalability across modern
+              infrastructure environments.
+            </p>
+          </div>
+          <!-- Cards -->
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card -->
+            <div
+              class="group relative p-8 rounded-2xl bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-[#C2996B]/60 transition-all overflow-hidden"
+            >
+              <!-- Glow -->
+              <div
+                class="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[#C2996B]/10 blur-2xl"
+              >4
+              </div>
+              <div class="relative z-10">
+                <p class="text-xs text-[#C2996B] font-mono mb-3">01</p>
+                <h3 class="text-xl font-semibold mb-3">
+                  Network Infrastructure
+                </h3>
+                <p class="text-sm text-[#E8EEF2]/70 leading-relaxed">
+                  VLAN segmentation, routing, and scalable network design built
+                  for performance and security.
+                </p>
+              </div>
+            </div>
+            <!-- Card -->
+            <div
+              class="group relative p-8 rounded-2xl bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-[#C2996B]/60 transition-all overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[#C2996B]/10 blur-2xl"
+              >
+              </div>
+              <div class="relative z-10">
+                <p class="text-xs text-[#C2996B] font-mono mb-3">02</p>
+                <h3 class="text-xl font-semibold mb-3">Server Deployment</h3>
+                <p class="text-sm text-[#E8EEF2]/70 leading-relaxed">
+                  Virtualization, containers, and backend systems engineered for
+                  uptime and flexibility.
+                </p>
+              </div>
+            </div>
+            <!-- Card -->
+            <div
+              class="group relative p-8 rounded-2xl bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-[#C2996B]/60 transition-all overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[#C2996B]/10 blur-2xl"
+              >
+              </div>
+              <div class="relative z-10">
+                <p class="text-xs text-[#C2996B] font-mono mb-3">03</p>
+                <h3 class="text-xl font-semibold mb-3">
+                  Monitoring & Security
+                </h3>
+                <p class="text-sm text-[#E8EEF2]/70 leading-relaxed">
+                  Proactive monitoring, alerting, and hardened infrastructure to
+                  prevent downtime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 px-6 relative bg-black text-white">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-10">
+            Proven <span class="text-[#C2996B]">Results</span>
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-xl bg-white/5 border border-white/10">
+              <p class="text-2xl font-bold text-[#C2996B] mb-2">
+                POS Stability
+              </p>
+              <p class="text-sm text-[#E8EEF2]/70">
+                Restored uptime for high-traffic bar environment
+              </p>
+            </div>
+
+            <div class="p-6 rounded-xl bg-white/5 border border-white/10">
+              <p class="text-2xl font-bold text-[#C2996B] mb-2">
+                Multi-Site Deployments
+              </p>
+              <p class="text-sm text-[#E8EEF2]/70">
+                Secure camera & network systems across locations
+              </p>
+            </div>
+
+            <div class="p-6 rounded-xl bg-white/5 border border-white/10">
+              <p class="text-2xl font-bold text-[#C2996B] mb-2">
+                Rapid Diagnostics
+              </p>
+              <p class="text-sm text-[#E8EEF2]/70">
+                Fast resolution of complex infrastructure issues
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 px-6 text-center text-white">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-4xl font-semibold mb-6">Need Reliable IT Support?</h2>
+          <p class="text-[#E8EEF2]/70 mb-8">
+            Get in touch to discuss your network, infrastructure, or support
+            needs.
+          </p>
+
+          <a
+            href="/contact"
+            class="inline-block px-8 py-3 rounded-lg bg-[#C2996B] text-black font-medium hover:opacity-90 transition"
+          >
+            Contact Us
+          </a>
+        </div>
+      </section>
+      <footer
+        class="py-12 text-center text-[#E8EEF2]/40 text-sm border-t border-white/5"
+      >
+        <p>
+          &copy; {new Date().getFullYear()} Owen Networks. All rights reserved.
         </p>
-
-        <h3 class="text-xl text-white font-medium">{app.name}</h3>
-        <p class="text-gray-400 text-sm mt-2">
-          Access instance →
+        <p class="font-mono mt-2 uppercase tracking-widest text-[10px]">
+          Wyckoff NJ, 07481 // Knoxville TN, 37916
         </p>
-      </div>
+      </footer>
+    </main>
+  </body>
 
-    </a>
-  ))}
-</div>
-			</section>
-			<div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-			<!-- <PhotographyGallery /> -->		
-<section id="services" class="py-32 text-white px-6 relative">
-  <div class="max-w-6xl mx-auto">
-
-    <!-- Section Header -->
-    <div class="mb-16">
-      <p class="text-xs tracking-widest text-[#C2996B] mb-2">SERVICES</p>
-      <h2 class="text-4xl font-bold">
-        IT & MSP <span class="text-[#C2996B]">Capabilities</span>
-      </h2>
-      <p class="text-[#E8EEF2]/60 mt-4 max-w-xl">
-        Designed for reliability, security, and scalability across modern infrastructure environments.
-      </p>
-    </div>
-
-    <!-- Cards -->
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <!-- Card -->
-      <div class="group relative p-8 rounded-2xl bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-[#C2996B]/60 transition-all overflow-hidden">
-        
-        <!-- Glow -->
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[#C2996B]/10 blur-2xl"></div>
-
-        <div class="relative z-10">
-          <p class="text-xs text-[#C2996B] font-mono mb-3">01</p>
-          <h3 class="text-xl font-semibold mb-3">Network Infrastructure</h3>
-          <p class="text-sm text-[#E8EEF2]/70 leading-relaxed">
-            VLAN segmentation, routing, and scalable network design built for performance and security.
-          </p>
-        </div>
-      </div>
-
-      <!-- Card -->
-      <div class="group relative p-8 rounded-2xl bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-[#C2996B]/60 transition-all overflow-hidden">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[#C2996B]/10 blur-2xl"></div>
-
-        <div class="relative z-10">
-          <p class="text-xs text-[#C2996B] font-mono mb-3">02</p>
-          <h3 class="text-xl font-semibold mb-3">Server Deployment</h3>
-          <p class="text-sm text-[#E8EEF2]/70 leading-relaxed">
-            Virtualization, containers, and backend systems engineered for uptime and flexibility.
-          </p>
-        </div>
-      </div>
-
-      <!-- Card -->
-      <div class="group relative p-8 rounded-2xl bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-[#C2996B]/60 transition-all overflow-hidden">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[#C2996B]/10 blur-2xl"></div>
-
-        <div class="relative z-10">
-          <p class="text-xs text-[#C2996B] font-mono mb-3">03</p>
-          <h3 class="text-xl font-semibold mb-3">Monitoring & Security</h3>
-          <p class="text-sm text-[#E8EEF2]/70 leading-relaxed">
-            Proactive monitoring, alerting, and hardened infrastructure to prevent downtime.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-		</main>
-
-		<footer class="py-12 text-center text-[#E8EEF2]/40 text-sm border-t border-white/5">
-			<p>&copy; {new Date().getFullYear()} Owen Networks. All rights reserved.</p>
-			<p class="font-mono mt-2 uppercase tracking-widest text-[10px]">System Stable // Signal Strong</p>
-		</footer>
-
-	</body>
-	
+  <style is:global>
+    :root {
+      --accent: #c2996b;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </html>
-
-<style is:global>
-	:root {
-		--accent: #C2996B;
-	}
-	html {
-		scroll-behavior: smooth;
-	}
-	body {
-		margin: 0;
-		padding: 0;
-	}
-</style>
